@@ -9,16 +9,27 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule , MatCardModule ,MatToolbarModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FusionChartsModule } from 'angular-fusioncharts';
+
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import { GraphComponent } from './dashboard/dashboard/graph.component';
+FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    GraphComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FusionChartsModule,
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
@@ -27,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatSelectModule,
     MatToolbarModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'dashboard', component: DashboardComponent},
       {path:'login', component: LoginComponent},
