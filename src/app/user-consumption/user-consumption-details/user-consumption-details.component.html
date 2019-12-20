@@ -1,0 +1,22 @@
+<div class="container">
+        <div class="table-md table-hover table-bordered" id="consumption-table">
+            <div class="table"> 
+                <thead>
+                    <tr>
+                        <th>From Date</th>
+                        <th>Till Date</th>
+                        <th>Consumption</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <tr *ngFor ='let userConsumption of userConsumptions'>
+                        <td>{{userConsumption.startDate}}</td>
+                        <td>{{userConsumption.endDate}}</td>
+                        <td>{{userConsumption.consumption}}</td>
+                    </tr>
+                </tbody>
+            </div> 
+                <a type="button" class="btn btn-primary" href="https://www.britishgas.co.uk/home-services.html">Click Here to Get Your Service Done</a>
+        </div>
+
+</div>

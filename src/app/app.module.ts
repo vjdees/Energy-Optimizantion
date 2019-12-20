@@ -16,6 +16,8 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import { GraphComponent } from './dashboard/dashboard/graph.component';
+import { ApplianceConsumptionDetailsComponent } from './appliance-consumption/appliance-consumption-details.component';
+import { UserConsumptionDetailsComponent } from './user-consumption/user-consumption-details/user-consumption-details.component';
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
 
 @NgModule({
@@ -24,6 +26,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     LoginComponent,
     DashboardComponent,
     GraphComponent,
+    ApplianceConsumptionDetailsComponent,
+    UserConsumptionDetailsComponent,
 
   ],
   imports: [
@@ -42,6 +46,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     RouterModule.forRoot([
       {path: 'dashboard', component: DashboardComponent},
       {path:'login', component: LoginComponent},
+      {path:'appliance-level-consumption-details', component: ApplianceConsumptionDetailsComponent},
+      {path:'user-consumption-details', component: UserConsumptionDetailsComponent},
       {path: '', redirectTo: 'login', pathMatch:'full'},
       {path: '**', component: LoginComponent}
     ]),

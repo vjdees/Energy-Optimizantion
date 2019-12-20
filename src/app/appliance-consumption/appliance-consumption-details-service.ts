@@ -6,19 +6,16 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 @Injectable({
     providedIn: 'root'
 })
-
-export class EnergyService {
-    date =new Date();
-    today = this.date.getFullYear()+"-"+this.date.getMonth()+"-"+this.date.getDate()+"T"+this.date.getHours()+":"+((this.date.getMinutes()<10?'0':'')+this.date.getMinutes())+"Z";
-    private Url = "https://api.carbonintensity.org.uk/regional/intensity/"+this.today+"/fw48h/postcode/RG10";
+export class ApplianceConsumptionService {
+    private Url = 'https://qcw3nh67n8.execute-api.us-east-2.amazonaws.com/dev/customers/appliances/1'
 
     constructor(private http: HttpClient) {
-        
-    }
 
-    getintensity(): Observable<any> {
+    }
+    
+    getapplianceconsumptiondetails(): Observable<any> {
         return this.http.get<any>(this.Url).pipe(
-            tap(data => JSON.stringify(data)),
+            tap(data =>JSON.stringify(data)),
             catchError(this.handleError)
         );
     }

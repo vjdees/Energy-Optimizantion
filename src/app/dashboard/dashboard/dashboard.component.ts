@@ -10,18 +10,20 @@ export class DashboardComponent {
   dataSource: Object;
   chartConfig: Object;
   errorMessage: any;
-  intensity: any = [
-
-  ];
+  intensity: any = [];
     constructor(private eService: EnergyService) {
       
      }
 
     viewGraph(){
+      let intensityObj = {};
       this.eService.getintensity().subscribe({
           next: intensity => {
-              this.intensity = intensity.data.data.map(i => i.intensity.forecast);
-              console.log(this.intensity);
+              intensity.data.data.map(i => {
+                intensityObj = {'label': i.from,'value': i.intensity.forecast};
+                this.intensity.push(intensityObj);
+              });
+              
           },
           error: err => this.errorMessage = err
       });

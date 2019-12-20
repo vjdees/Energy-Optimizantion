@@ -1,0 +1,27 @@
+<div class="container">
+        <div class="table-responsive table-hover table-bordered" id="consumption-table">
+            <div class="table"> 
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Appliance Make</th>
+                        <th>Appliance Model</th>
+                        <th>Age of the Appliance</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <tr *ngFor ='let applianceConsumption of applianceConsumptions'>
+                        <td>{{applianceConsumption.Name}}</td>
+                        <td>{{applianceConsumption.ApplianceMake}}</td>
+                        <td>{{applianceConsumption.ApplianceModel}}</td>
+                        <td>{{applianceConsumption.Age}}</td>
+                    </tr>
+                </tbody>
+            </div> 
+            <a type="button" class="btn btn-success" href="https://www.britishgas.co.uk/smart-home.html">
+                Click Here and Get Smart
+            </a>
+        </div>
+        
+
+</div>

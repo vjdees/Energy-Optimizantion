@@ -1,0 +1,19 @@
+table{
+    text-align: center; 
+  }
+  
+#consumption-table {
+    margin: auto;
+    width: 50% !important; 
+  }
+
+thead {
+    background-color: #337AB7;
+    color: #ffffff;
+    text-align: center;
+}
+
+.btn {
+    margin: auto;
+    width:50% !important;
+}
