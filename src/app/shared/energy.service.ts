@@ -9,7 +9,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 export class EnergyService {
     date =new Date();
-    today = this.date.getFullYear()+"-"+this.date.getMonth()+"-"+this.date.getDate()+"T"+this.date.getHours()+":"+((this.date.getMinutes()<10?'0':'')+this.date.getMinutes())+"Z";
+    today = this.date.toISOString();
     private Url = "https://api.carbonintensity.org.uk/regional/intensity/"+this.today+"/fw48h/postcode/RG10";
 
     constructor(private http: HttpClient) {
