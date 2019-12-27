@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule , MatCardModule ,MatToolbarModule} from '@angular/material';
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule , MatCardModule ,MatToolbarModule,MatSnackBarModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FusionChartsModule } from 'angular-fusioncharts';
@@ -41,6 +41,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     MatCardModule,
     MatIconModule,
     MatSelectModule,
+    MatSnackBarModule,
     MatToolbarModule,
     HttpClientModule,
     RouterModule.forRoot([

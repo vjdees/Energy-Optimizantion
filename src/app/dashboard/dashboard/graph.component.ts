@@ -14,8 +14,8 @@ export class GraphComponent implements OnInit {
 
   constructor(private eService: EnergyService) {
     this.chartConfig = {
-      width: '700',
-      height: '400',
+      width: '900',
+      height: '600',
       type: 'column2d',
       dataFormat: 'json',
   };
@@ -45,9 +45,8 @@ export class GraphComponent implements OnInit {
     this.eService.getintensity().subscribe({
         next: intensity => {
             intensity.data.data.map(i => {
-              intensityObj = {'label': i.from,'value': i.intensity.forecast};
+              intensityObj = {'label': i.from.substring(11,16),'value': i.intensity.forecast};
               this.intensity.push(intensityObj);
-              console.log("================",this.intensity);
             });
             
         },

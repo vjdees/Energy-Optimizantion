@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { EnergyService } from 'src/app/shared/energy.service';
-import { GraphComponent } from 'src/app/dashboard/dashboard/graph.component';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
 export class DashboardComponent {
   dataSource: Object;
   chartConfig: Object;
   errorMessage: any;
   intensity: any = [];
+
     constructor(private eService: EnergyService) {
       
      }
