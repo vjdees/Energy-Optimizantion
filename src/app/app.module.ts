@@ -18,6 +18,7 @@ import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import { GraphComponent } from './dashboard/dashboard/graph.component';
 import { ApplianceConsumptionDetailsComponent } from './appliance-consumption/appliance-consumption-details.component';
 import { UserConsumptionDetailsComponent } from './user-consumption/user-consumption-details/user-consumption-details.component';
+import { TemplateMailComponent } from './template-mail/template-mail/template-mail.component';
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
 
 @NgModule({
@@ -28,6 +29,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     GraphComponent,
     ApplianceConsumptionDetailsComponent,
     UserConsumptionDetailsComponent,
+    TemplateMailComponent,
 
   ],
   imports: [
@@ -48,6 +50,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
       {path:'login', component: LoginComponent},
       {path:'appliance-level-consumption-details', component: ApplianceConsumptionDetailsComponent},
       {path:'user-consumption-details', component: UserConsumptionDetailsComponent},
+      {path: 'template-mail', component: TemplateMailComponent},
       {path: '', redirectTo: 'login', pathMatch:'full'},
       {path: '**', component: LoginComponent}
     ]),

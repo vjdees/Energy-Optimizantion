@@ -1,8 +1,20 @@
-table th {
+table{
   text-align: center; 
 }
 
 #consumption-table {
   margin: auto;
   width: 50% !important; 
+}
+
+thead {
+  background-color: #337AB7;
+  color: #ffffff;
+  text-align: center;
+}
+
+a {
+  margin-right: 132px;
+  margin-left: 132px;
+  width:50% !important;
 }

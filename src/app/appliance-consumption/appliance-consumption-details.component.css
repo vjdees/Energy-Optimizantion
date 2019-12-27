@@ -13,7 +13,8 @@ thead {
     text-align: center;
 }
 
-.btn {
-    margin: auto;
+a {
+    margin-right: 132px;
+    margin-left: 132px;
     width:50% !important;
 }
