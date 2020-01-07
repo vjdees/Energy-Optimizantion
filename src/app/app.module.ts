@@ -19,6 +19,7 @@ import { GraphComponent } from './dashboard/dashboard/graph.component';
 import { ApplianceConsumptionDetailsComponent } from './appliance-consumption/appliance-consumption-details.component';
 import { UserConsumptionDetailsComponent } from './user-consumption/user-consumption-details/user-consumption-details.component';
 import { TemplateMailComponent } from './template-mail/template-mail/template-mail.component';
+import { MatTableModule } from '@angular/material/table';
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
 
 @NgModule({
@@ -46,6 +47,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     MatSnackBarModule,
     MatToolbarModule,
     HttpClientModule,
+    MatTableModule,
     RouterModule.forRoot([
       {path: 'dashboard', component: DashboardComponent},
       {path:'login', component: LoginComponent},

@@ -8,8 +8,10 @@ import { UserConsumptionService } from '../user-consumption-details-service';
 })
 export class UserConsumptionDetailsComponent implements OnInit {
   userConsumptions: any[] = []
+  displayedColumns: string[] = ['startDate', 'endDate', 'consumption'];
   errorMessage: any;
   constructor(private ucdService: UserConsumptionService) { }
+  
 
   ngOnInit() {
     this.ucdService.getuserconsumption().subscribe({
