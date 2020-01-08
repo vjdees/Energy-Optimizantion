@@ -1,5 +1,5 @@
     
-<div   class="modal" id="myModal">
+<div class="modal" id="myModal">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
     
@@ -10,16 +10,22 @@
             </div>
     
         <!-- Modal body -->
-            <div class="modal-body">
+            
+        <div *ngIf="isLoading" class="model-body">
+            <div class="col-12 center">
+                <mat-spinner></mat-spinner>
+            </div>
+        </div>    
+        <div *ngIf= "!isLoading" class="modal-body">
                 <fusioncharts
                     [chartConfig]=chartConfig
-                    [dataSource]=dataSource >
+                    [dataSource]=dataSource>
                 </fusioncharts>
             </div>
     
         <!-- Modal footer -->
             <div class="modal-footer">
-                <button class="mr-2" mat-raised-button color="primary"id="subscribe">Subscribe</button>
+                <button class="mr-2" mat-raised-button color="primary"id="subscribe" data-dismiss="modal" [routerLink]="['/template-mail']">Subscribe</button>
                 <button mat-raised-button color="warn" data-dismiss="modal">Close</button>
             </div>
       </div>

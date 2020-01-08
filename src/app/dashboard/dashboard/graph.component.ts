@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EnergyService } from 'src/app/shared/energy.service';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-graph',
@@ -11,10 +12,11 @@ export class GraphComponent implements OnInit {
   chartConfig: Object;
   intensity: any = [];  
   errorMessage: any;
+  isLoading = true;
 
   constructor(private eService: EnergyService) {
     this.chartConfig = {
-      width: '900',
+      width: '1100',
       height: '600',
       type: 'column2d',
       dataFormat: 'json',
@@ -44,7 +46,8 @@ export class GraphComponent implements OnInit {
     let intensityObj = {};
     this.eService.getintensity().subscribe({
         next: intensity => {
-            intensity.data.data.map(i => {
+          this.isLoading = false;  
+          intensity.data.data.map(i => {
               intensityObj = {'label': i.from.substring(11,16),'value': i.intensity.forecast};
               this.intensity.push(intensityObj);
             });
@@ -52,5 +55,5 @@ export class GraphComponent implements OnInit {
         },
         error: err => this.errorMessage = err
     });
-}
+  }
 }
