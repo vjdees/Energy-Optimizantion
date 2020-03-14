@@ -17,11 +17,16 @@
             </div>
         </div>    
         <div *ngIf= "!isLoading" class="modal-body">
-                <fusioncharts
-                    [chartConfig]=chartConfig
-                    [dataSource]=dataSource>
-                </fusioncharts>
+            <fusioncharts
+            [width]="width"
+            [height]="height"
+            [type]="type"
+            [dataFormat]="dataFormat"
+            [dataSource]="dataSource"
+          >
+          </fusioncharts>
             </div>
+            
     
         <!-- Modal footer -->
             <div class="modal-footer">
