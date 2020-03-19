@@ -20,6 +20,8 @@ import { ApplianceConsumptionDetailsComponent } from './appliance-consumption/ap
 import { UserConsumptionDetailsComponent } from './user-consumption/user-consumption-details/user-consumption-details.component';
 import { TemplateMailComponent } from './template-mail/template-mail/template-mail.component';
 import { MatTableModule } from '@angular/material/table';
+import { DxChartModule } from 'devextreme-angular';
+import { CarbonIntensityComponent } from './carbon-intensity/carbon-intensity.component';
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
 
 @NgModule({
@@ -31,6 +33,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     ApplianceConsumptionDetailsComponent,
     UserConsumptionDetailsComponent,
     TemplateMailComponent,
+    CarbonIntensityComponent,
 
   ],
   imports: [
@@ -49,12 +52,14 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
     HttpClientModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    DxChartModule,
     RouterModule.forRoot([
       {path: 'dashboard', component: DashboardComponent},
       {path:'login', component: LoginComponent},
       {path:'appliance-level-consumption-details', component: ApplianceConsumptionDetailsComponent},
       {path:'user-consumption-details', component: UserConsumptionDetailsComponent},
       {path: 'template-mail', component: TemplateMailComponent},
+      {path:'carbon-intensity', component: CarbonIntensityComponent},
       {path: '', redirectTo: 'login', pathMatch:'full'},
       {path: '**', component: LoginComponent}
     ]),

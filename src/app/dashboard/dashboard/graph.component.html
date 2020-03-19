@@ -1,38 +1,83 @@
-    
+
 <div class="modal" id="myModal">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-    
-        <!-- Modal Header -->
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Energy Graph</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-    
-        <!-- Modal body -->
-            
-        <div *ngIf="isLoading" class="model-body">
-            <div class="col-12 center">
-                <mat-spinner></mat-spinner>
+
+            <!-- Modal body -->
+
+            <div *ngIf="isLoading" class="model-body">
+                <div class="col-12 center">
+                    <mat-spinner></mat-spinner>
+                </div>
             </div>
-        </div>    
-        <!-- <div *ngIf= "!isLoading" class="modal-body"> -->
-            <fusioncharts
+            <div *ngIf="!isLoading" class="modal-body">
+                <!-- <fusioncharts
             [width]="width"
             [height]="height"
             [type]="type"
             [dataFormat]="dataFormat"
             [dataSource]="dataSource"
           >
-          </fusioncharts>
-            <!-- </div>
-             -->
-    
-        <!-- Modal footer -->
-            <div class="modal-footer">
-                <button class="mr-2" mat-raised-button color="primary"id="subscribe" data-dismiss="modal" [routerLink]="['/template-mail']">Subscribe</button>
-                <button mat-raised-button color="warn" data-dismiss="modal">Close</button>
+          </fusioncharts> -->
+                <dx-chart id="chart" [dataSource]="userData"
+                    title="Forcast for next 24 hours"
+                    [customizePoint]="customizePoint"
+                    [customizeLabel]="customizeLabel">
+                    <dxi-series argumentField="day" valueField="value"
+                        type="bar" color="#e7d19a"></dxi-series>
+                    <dxi-value-axis [maxValueMargin]="0.01"
+                        [visualRange]="{startValue:140}">
+                        <dxo-label [customizeText]="customizeText"></dxo-label>
+                        <dxi-constant-line [width]="2" [value]="lowAverage"
+                            color="#8c8cff" dashStyle="dash">
+                            <dxo-label text="Low Average"></dxo-label>
+                        </dxi-constant-line>
+                        <dxi-constant-line [width]="2" [value]="highAverage"
+                            color="#ff7c7c" dashStyle="dash">
+                            <dxo-label text="High Average"></dxo-label>
+                        </dxi-constant-line>
+                    </dxi-value-axis>
+                    <dxo-legend [visible]="false"></dxo-legend>
+                    <dxo-export [enabled]="false"></dxo-export>
+                </dx-chart>
             </div>
-      </div>
+
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <div class="row col-12">
+                    <h6 class="col-10">Plan your energy consumption based on carbon intensity notifications
+                        <a  title="know more about carbon intensity" target="_blank" href="http://localhost:4200/carbon-intensity"> Know more</a>
+                    </h6>
+                    
+                </div>
+                <div class="row col-12" *ngIf="submitvalue">
+                        <div class="col-11">
+                            <input type="checkbox" [(ngModel)]="tick"> Please tick if you want to recive notifications for high carbon intensity for your region 
+                        </div>
+                        <div class="col-1">
+                            <!-- <button class="mr-2" mat-raised-button color="primary" [(ngModel)]="submitvalue" (click)="submit()"
+                            id="subscribe" data-dismiss="modal"
+                            [routerLink]="['/template-mail']" [disabled]="!tick">Subscribe</button> -->
+                            <button class="mr-2" mat-raised-button color="primary" [(ngModel)]="submitvalue" (click)="submit()"
+                            id="subscribe" [disabled]="!tick">Subscribe</button>
+                        </div>
+                </div>
+                <div class="row col-12" *ngIf="!submitvalue">
+                    <div class="col-12"> 
+                        <h6>Registration successfull</h6>
+                        <p>
+                            You have been successfully registered for notifications,we will notify on next high carbon intensity
+                        </p>
+                    </div>
+                </div> 
+            </div>
+        </div>
     </div>
-    </div>
+</div>

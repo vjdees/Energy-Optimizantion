@@ -10,7 +10,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class EnergyService {
     date =new Date();
     today = this.date.toISOString();
-    private Url = "https://api.carbonintensity.org.uk/regional/intensity/"+this.today+"/fw48h/postcode/RG10";
+    private Url = "https://api.carbonintensity.org.uk/regional/intensity/"+this.today+"/fw24h/postcode/RG10";
 
     constructor(private http: HttpClient) {
         

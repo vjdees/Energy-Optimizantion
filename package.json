@@ -28,7 +28,11 @@
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "devextreme-angular": "19.2",
+    "devextreme": "19.2",
+    "devexpress-gantt": "0.0.27",
+    "devexpress-diagram": "0.1.53"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.12",
